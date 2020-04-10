@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {HashRouter as Router, Route} from 'react-router-dom'
+import { HashRouter as Router, Route } from 'react-router-dom'
 // import axios from 'axios';
 import './App.css';
-import {withRouter} from 'react-router'
+import { withRouter } from 'react-router'
 
 import Page1 from '../Pages/Page1/Page1';
 import Page2 from '../Pages/Page2/Page2';
@@ -19,12 +19,12 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <Router>
-          <Route exact path='/' component={Page1}/>
-          <Route path='/Page2' component={Page2}/>
-          <Route path='/Page3' component={Page3}/>
-          <Route path='/Page3' component={Page4}/>
+          <Route exact path='/' component={Page1} />
+          <Route path='/Page2' component={Page2} />
+          <Route path='/Page3' component={Page3} />
+          <Route path='/Page4' component={Page4} />
         </Router>
-        <br/>
+        <br />
       </div>
     );
   }
