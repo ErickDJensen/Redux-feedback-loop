@@ -3,6 +3,12 @@ import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom';
 
 class Page2 extends Component {
+
+    handleChangePage = () => {
+        //change page to support page
+        this.props.history.push( '/Page3' );
+    }
+
     render() {
         return (
             <>
@@ -11,7 +17,8 @@ class Page2 extends Component {
             </div>
             <div>
             <h3>Understanding?</h3>
-            <input type="number"></input><button>Next</button>
+            <input type="number"></input>
+            <button onClick={this.handleChangePage}>Next</button>
         </div>
         </>
         )
