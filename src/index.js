@@ -11,12 +11,60 @@ import { HashRouter as Router } from 'react-router-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
+const initState = {
+    feeling: [],
+    understanding: [],
+    support: [],
+    comments: [],
+}
+
+const feeling = (state=initState, action) => {
+    if(action.type === 'ADD_FEELING') {
+        console.log('feeling number', action.payload)
+        return[...state.feeling, action.payload]
+    }
+    return state;
+}
+
+const feeling = (state=initState, action) => {
+    if(action.type === 'ADD_UNDERSTAND') {
+        console.log('understanding number', action.payload)
+        return[...state.feeling, action.payload]
+    }
+    return state;
+}
+
+const feeling = (state=initState, action) => {
+    if(action.type === 'ADD_SUPPORT') {
+        console.log('feeling number', action.payload)
+        return[...state.feeling, action.payload]
+    }
+    return state;
+}
+
+const feeling = (state=initState, action) => {
+    if(action.type === 'ADD_COMMENT') {
+        console.log('feeling number', action.payload)
+        return[...state.feeling, action.payload]
+    }
+    return state;
+}
 
 
 const storeInstance = createStore(
-    combineReducers({}), //Add reducer functions to combineReducers
+    combineReducers({
+        feeling,
+    
+    }), //Add reducer functions to combineReducers
     applyMiddleware(logger) //Add our middleware logger
 );
+
+storeInstance.subscribe( () => {
+    console.log('State Updated');
+    console.log(storeInstance.getState());
+})
+
+
 
 ReactDOM.render(<Provider store={storeInstance}><Router><App /></Router></Provider>, document.getElementById('root'));
 

@@ -2,7 +2,14 @@ import React, { Component } from 'react'
 
 import {withRouter} from 'react-router-dom';
 
+import {connect} from 'react-redux';
+
 class Page4 extends Component {
+
+    handleChangePage = () => {
+        //change page to summary page
+        this.props.history.push( '/Page5' );
+    }
     render() {
         return (
             <>
@@ -11,11 +18,12 @@ class Page4 extends Component {
             </div>
             <div>
             <h3>Comments</h3>
-            <input type="text"></input><button>Next</button>
+            <input type="text"></input>
+            <button onClick={this.handleChangePage}>Next</button>
         </div>
         </>
         )
     }
 }
 
-export default withRouter(Page4);
+export default withRouter(connect()(Page4));

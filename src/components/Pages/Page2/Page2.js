@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import {withRouter} from 'react-router-dom';
 
+import {connect} from 'react-redux';
+
 class Page2 extends Component {
 
     handleChangePage = () => {
@@ -25,4 +27,4 @@ class Page2 extends Component {
     }
 }
 
-export default withRouter(Page2);
+export default withRouter(connect()(Page2));
