@@ -11,41 +11,41 @@ import { HashRouter as Router } from 'react-router-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
-const initState = {
-    feeling: [],
-    understanding: [],
-    support: [],
-    comment: [],
-}
+// const initState = {
+//     feeling: [],
+//     understanding: [],
+//     support: [],
+//     comment: [],
+// }
 
-const feeling = (state=initState, action) => {
+const feeling = (state=[], action) => {
     if(action.type === 'ADD_FEELING') {
         console.log('feeling number', action.payload)
-        return[...state.feeling, action.payload]
+        return[...state, action.payload]
     }
     return state;
 }
 
-const understanding = (state=initState, action) => {
+const understanding = (state=[], action) => {
     if(action.type === 'ADD_UNDERSTAND') {
         console.log('understanding number', action.payload)
-        return[...state.understanding, action.payload]
+        return[...state, action.payload]
     }
     return state;
 }
 
-const support = (state=initState, action) => {
+const support = (state=[], action) => {
     if(action.type === 'ADD_SUPPORT') {
         console.log('support number', action.payload)
-        return[...state.support, action.payload]
+        return[...state, action.payload]
     }
     return state;
 }
 
-const comment = (state=initState, action) => {
+const comment = (state=[], action) => {
     if(action.type === 'ADD_COMMENT') {
         console.log('comment', action.payload)
-        return[...state.comment, action.payload]
+        return[...state, action.payload]
     }
     return state;
 }
@@ -63,7 +63,7 @@ const storeInstance = createStore(
 
 storeInstance.subscribe( () => {
     console.log('State Updated');
-    console.log(storeInstance.getState());
+    console.log('in state', storeInstance.getState());
 })
 
 
