@@ -22,9 +22,6 @@ class Page1 extends Component {
         })
     }
    
-
-
- 
     render() {
         console.log('props', this.props);
         

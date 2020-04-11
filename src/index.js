@@ -15,7 +15,7 @@ const initState = {
     feeling: [],
     understanding: [],
     support: [],
-    comments: [],
+    comment: [],
 }
 
 const feeling = (state=initState, action) => {
@@ -26,26 +26,26 @@ const feeling = (state=initState, action) => {
     return state;
 }
 
-const feeling = (state=initState, action) => {
+const understanding = (state=initState, action) => {
     if(action.type === 'ADD_UNDERSTAND') {
         console.log('understanding number', action.payload)
-        return[...state.feeling, action.payload]
+        return[...state.understanding, action.payload]
     }
     return state;
 }
 
-const feeling = (state=initState, action) => {
+const support = (state=initState, action) => {
     if(action.type === 'ADD_SUPPORT') {
-        console.log('feeling number', action.payload)
-        return[...state.feeling, action.payload]
+        console.log('support number', action.payload)
+        return[...state.support, action.payload]
     }
     return state;
 }
 
-const feeling = (state=initState, action) => {
+const comment = (state=initState, action) => {
     if(action.type === 'ADD_COMMENT') {
-        console.log('feeling number', action.payload)
-        return[...state.feeling, action.payload]
+        console.log('comment', action.payload)
+        return[...state.comment, action.payload]
     }
     return state;
 }
@@ -54,7 +54,9 @@ const feeling = (state=initState, action) => {
 const storeInstance = createStore(
     combineReducers({
         feeling,
-    
+        understanding,
+        support,
+        comment,
     }), //Add reducer functions to combineReducers
     applyMiddleware(logger) //Add our middleware logger
 );

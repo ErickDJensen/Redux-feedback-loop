@@ -6,9 +6,18 @@ import {connect} from 'react-redux';
 
 class Page2 extends Component {
 
-    handleChangePage = () => {
+    handleChangePage = (event) => {
+        console.log('in handleChangePage', this.state.understanding);
+        this.props.dispatch( {type: 'ADD_UNDERSTAND', payload:this.state.understanding} );
         //change page to support page
         this.props.history.push( '/Page3' );
+    }
+
+    handleInputChange = (event) => {
+        console.log('in handleInputChange', event.target.value);
+        this.setState ({
+            understanding: event.target.value,
+        })
     }
 
     render() {
@@ -19,7 +28,7 @@ class Page2 extends Component {
             </div>
             <div>
             <h3>Understanding?</h3>
-            <input type="number"></input>
+            <input type="number" onChange={this.handleInputChange}></input>
             <button onClick={this.handleChangePage}>Next</button>
         </div>
         </>
