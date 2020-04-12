@@ -9,7 +9,7 @@ import Page2 from '../Pages/Page2/Page2';
 import Page3 from '../Pages/Page3/Page3';
 import Page4 from '../Pages/Page4/Page4';
 import Page5 from '../Pages/Page5/Page5';
-
+import Page6 from '../Pages/Page6/Page6';
 
 class App extends Component {
   render() {
@@ -25,6 +25,7 @@ class App extends Component {
           <Route path='/Page3' component={Page3} />
           <Route path='/Page4' component={Page4} />
           <Route path='/Page5' component={Page5} />
+          <Route path='/Page6' component={Page6} />
         </Router>
         <br />
       </div>

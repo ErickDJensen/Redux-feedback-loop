@@ -11,12 +11,6 @@ import { HashRouter as Router } from 'react-router-dom';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
-// const initState = {
-//     feeling: [],
-//     understanding: [],
-//     support: [],
-//     comment: [],
-// }
 
 const feeling = (state=[], action) => {
     if(action.type === 'ADD_FEELING') {
