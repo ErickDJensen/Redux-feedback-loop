@@ -10,10 +10,15 @@ class Page1 extends Component {
 
     handleChangePage = (event) => {
         console.log('in handleChangePage', this.state.feeling);
+        let feeling = this.state.feeling
+        if (feeling === '') {
+            alert ("please select a number from 1 to 10");
+        }else{
         this.props.dispatch( {type: 'ADD_FEELING', payload:this.state.feeling} );
         //change page to understanding page
         this.props.history.push( '/Page2' );
     }
+}
 
     handleInputChange = (event) => {
         console.log('in handleInputChange', event.target.value);

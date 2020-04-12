@@ -12,10 +12,15 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 
+
 const feeling = (state=[], action) => {
     if(action.type === 'ADD_FEELING') {
         console.log('feeling number', action.payload)
         return[...state, action.payload]
+    }
+    if (action.type === 'CLEAR_STORE') {
+        const updatedState = [];
+        return updatedState;
     }
     return state;
 }
@@ -25,6 +30,10 @@ const understanding = (state=[], action) => {
         console.log('understanding number', action.payload)
         return[...state, action.payload]
     }
+    if (action.type === 'CLEAR_STORE') {
+        const updatedState = [];
+        return updatedState;
+    }
     return state;
 }
 
@@ -33,6 +42,10 @@ const support = (state=[], action) => {
         console.log('support number', action.payload)
         return[...state, action.payload]
     }
+    if (action.type === 'CLEAR_STORE') {
+        const updatedState = [];
+        return updatedState;
+    }
     return state;
 }
 
@@ -40,6 +53,10 @@ const comment = (state=[], action) => {
     if(action.type === 'ADD_COMMENT') {
         console.log('comment', action.payload)
         return[...state, action.payload]
+    }
+    if (action.type === 'CLEAR_STORE') {
+        const updatedState = [];
+        return updatedState;
     }
     return state;
 }
@@ -51,6 +68,7 @@ const storeInstance = createStore(
         understanding,
         support,
         comment,
+        
     }), //Add reducer functions to combineReducers
     applyMiddleware(logger) //Add our middleware logger
 );

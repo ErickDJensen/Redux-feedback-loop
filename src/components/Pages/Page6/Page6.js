@@ -1,15 +1,23 @@
 import React, { Component } from 'react'
 
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-export class Page6 extends Component {
+class Page6 extends Component {
+
+    handleChangePage = (event) => {
+        console.log('in handleChangePage');
+        this.props.dispatch({ type: 'CLEAR_STORE' });
+        //go back to the beginning
+        this.props.history.push('/');
+    }
+
     render() {
         return (
             <div>
                 <h1>Thank You!</h1>
-                <button>Leave New Feedback</button>
+                <button onClick={this.handleChangePage}>Leave New Feedback</button>
             </div>
         )
     }

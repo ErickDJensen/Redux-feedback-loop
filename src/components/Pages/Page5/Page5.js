@@ -8,20 +8,17 @@ import axios from 'axios';
 
 class Page5 extends Component {
 
-    state={
-        newFeedback: {
+    handleSubmit = (event) => {
+        event.preventDefault();
+        let newFeedback = {
             feeling: this.props.feeling[0],
             understanding: this.props.understanding[0],
             support: this.props.support[0],
             comments: this.props.comments[0],
         }
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(`Adding feedback`, this.state.newFeedback);
+        console.log(`Adding feedback`, newFeedback);
         // TODO - axios request to server to add book
-        axios.post('./feedback', this.state.newFeedback)
+        axios.post('./feedback', newFeedback)
       .then( response => {
         console.log('Added successfully');
         this.handleChangePage();
