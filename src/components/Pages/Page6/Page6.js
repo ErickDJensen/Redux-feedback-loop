@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 class Page6 extends Component {
 
+    //function to clear data and go back to starting screen
     handleChangePage = (event) => {
         console.log('in handleChangePage');
         this.props.dispatch({ type: 'CLEAR_STORE' });

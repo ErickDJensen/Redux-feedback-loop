@@ -12,11 +12,11 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 
-
-const feeling = (state=[], action) => {
-    if(action.type === 'ADD_FEELING') {
+//reducer for feeling
+const feeling = (state = [], action) => {
+    if (action.type === 'ADD_FEELING') {
         console.log('feeling number', action.payload)
-        return[...state, action.payload]
+        return [...state, action.payload]
     }
     if (action.type === 'CLEAR_STORE') {
         const updatedState = [];
@@ -24,11 +24,11 @@ const feeling = (state=[], action) => {
     }
     return state;
 }
-
-const understanding = (state=[], action) => {
-    if(action.type === 'ADD_UNDERSTAND') {
+//reducer for understanding
+const understanding = (state = [], action) => {
+    if (action.type === 'ADD_UNDERSTAND') {
         console.log('understanding number', action.payload)
-        return[...state, action.payload]
+        return [...state, action.payload]
     }
     if (action.type === 'CLEAR_STORE') {
         const updatedState = [];
@@ -36,11 +36,11 @@ const understanding = (state=[], action) => {
     }
     return state;
 }
-
-const support = (state=[], action) => {
-    if(action.type === 'ADD_SUPPORT') {
+//reducer for support
+const support = (state = [], action) => {
+    if (action.type === 'ADD_SUPPORT') {
         console.log('support number', action.payload)
-        return[...state, action.payload]
+        return [...state, action.payload]
     }
     if (action.type === 'CLEAR_STORE') {
         const updatedState = [];
@@ -48,11 +48,11 @@ const support = (state=[], action) => {
     }
     return state;
 }
-
-const comment = (state=[], action) => {
-    if(action.type === 'ADD_COMMENT') {
+//reducer for comments
+const comment = (state = [], action) => {
+    if (action.type === 'ADD_COMMENT') {
         console.log('comment', action.payload)
-        return[...state, action.payload]
+        return [...state, action.payload]
     }
     if (action.type === 'CLEAR_STORE') {
         const updatedState = [];
@@ -61,19 +61,19 @@ const comment = (state=[], action) => {
     return state;
 }
 
-
+//redux store
 const storeInstance = createStore(
     combineReducers({
         feeling,
         understanding,
         support,
         comment,
-        
-    }), //Add reducer functions to combineReducers
+
+    }), 
     applyMiddleware(logger) //Add our middleware logger
 );
 
-storeInstance.subscribe( () => {
+storeInstance.subscribe(() => {
     console.log('State Updated');
     console.log('in state', storeInstance.getState());
 })

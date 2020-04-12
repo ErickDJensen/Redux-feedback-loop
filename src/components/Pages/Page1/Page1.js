@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 class Page1 extends Component {
 
 
-
+    //function to set feeling feedback and move to next page
     handleChangePage = (event) => {
         console.log('in handleChangePage', this.state.feeling);
         if (this.state.feeling <= 0 || this.state.feeling > 10) {
@@ -18,7 +18,7 @@ class Page1 extends Component {
             this.props.history.push('/Page2');
         }
     }
-
+    //function to take in the input value
     handleInputChange = (event) => {
         console.log('in handleInputChange', event.target.value);
         this.setState({

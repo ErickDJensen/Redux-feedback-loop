@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 import axios from 'axios';
 
 class Page5 extends Component {
 
+    //function to POST feedback 
     handleSubmit = (event) => {
         event.preventDefault();
         let newFeedback = {
@@ -17,19 +18,18 @@ class Page5 extends Component {
             comments: this.props.comments[0],
         }
         console.log(`Adding feedback`, newFeedback);
-        // TODO - axios request to server to add book
         axios.post('./feedback', newFeedback)
-      .then( response => {
-        console.log('Added successfully');
-        this.handleChangePage();
-      }).catch( error => {
-        console.log('error adding book', error);
-      })
+            .then(response => {
+                console.log('Added successfully');
+                this.handleChangePage();
+            }).catch(error => {
+                console.log('error adding feedback', error);
+            })
     }
-  
+    //function to move to next page
     handleChangePage = (event) => {
         //change page to comments page
-        this.props.history.push( '/Page6' );
+        this.props.history.push('/Page6');
     }
 
 
@@ -50,11 +50,10 @@ class Page5 extends Component {
 }
 
 const putReduxStateOnProps = (reduxStore) => ({
-    // reduxStore - this gives me the whole thing
     feeling: reduxStore.feeling,
     understanding: reduxStore.understanding,
     support: reduxStore.support,
     comments: reduxStore.comment,
-   })
+})
 
 export default withRouter(connect(putReduxStateOnProps)(Page5));

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom'
-// import axios from 'axios';
+
 import './App.css';
 import { withRouter } from 'react-router'
 
+//Import components to put on this page
 import Page1 from '../Pages/Page1/Page1';
 import Page2 from '../Pages/Page2/Page2';
 import Page3 from '../Pages/Page3/Page3';
