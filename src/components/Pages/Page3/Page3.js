@@ -6,6 +6,10 @@ import { connect } from 'react-redux';
 
 class Page3 extends Component {
 
+    state={
+        support: 0,
+    }
+    
     //function to set support feedback and move to next page
     handleChangePage = (event) => {
         console.log('in handleChangePage', this.state.support);

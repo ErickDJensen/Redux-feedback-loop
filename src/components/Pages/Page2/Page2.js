@@ -5,6 +5,10 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Page2 extends Component {
+    state={
+        understanding: 0,
+    }
+
 
     //function to set understanding feedback and move to next page
     handleChangePage = (event) => {

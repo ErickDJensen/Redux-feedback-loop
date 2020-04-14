@@ -5,7 +5,9 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Page1 extends Component {
-
+state={
+    feeling: 0,
+}
 
     //function to set feeling feedback and move to next page
     handleChangePage = (event) => {
