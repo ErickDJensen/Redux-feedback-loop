@@ -6,8 +6,8 @@
 This app takes in user feedback on material they have learned. This feedback is based on 3 metrics: how user is feeling overall, how well user understands the material, if the user feels supported, as well as comments the user can optionally enter.
 
 ## Screen Shot
-<img scr="images/feedback_feeling.png">
-<img scr="images/feedback_summary.png">
+![](images/feedback_feeling.png)
+![](images/feedback_summary.png)
 
 ## Prerequisites
 - React
